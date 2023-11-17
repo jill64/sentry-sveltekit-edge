@@ -9,4 +9,4 @@ jobs:
         provider: [vercel, netlify, cloudflare]
     uses: jill64/.github/.github/workflows/run-playwright.yml@main
     with:
-      test-command: export PREVIEW_URL=${{ matrix.provider == 'vercel' && vars.VERCEL_PREVIEW_HOST || matrix.provider == 'netlify' && vars.NETLIFY_PREVIEW_HOST || vars.CLOUDFLARE_PREVIEW_HOST }} && npx playwright test
+      test-command: export PREVIEW_HOST=${{ matrix.provider == 'vercel' && vars.VERCEL_PREVIEW_HOST || matrix.provider == 'netlify' && vars.NETLIFY_PREVIEW_HOST || vars.CLOUDFLARE_PREVIEW_HOST }} && npx playwright test
