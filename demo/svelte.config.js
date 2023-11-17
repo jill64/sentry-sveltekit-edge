@@ -16,7 +16,7 @@ const config = {
         })
       : VERCEL
         ? vercel({
-            edge: true
+            runtime: 'edge'
           })
         : CF_PAGES
           ? cloudflare()
