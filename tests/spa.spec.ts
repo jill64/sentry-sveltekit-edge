@@ -5,7 +5,7 @@ test('SPA', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'CSR' })).toBeVisible()
 
   await page.getByRole('link', { name: 'Goto Root' }).click()
-  
+
   await expect(
     page.getByRole('heading', { name: 'sentry-sveltekit-edge' })
   ).toBeVisible()
