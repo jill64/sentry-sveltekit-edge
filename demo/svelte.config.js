@@ -10,11 +10,17 @@ const host = process.env.PREVIEW_HOST
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: host.includes('netlify.app') ? netlify({
-      edge: true
-    }) : host.includes('vercel.app') ? vercel({
-      edge: true
-    }) : host.includes('pages.dev') ? cloudflare() : auto(),
+    adapter: host.includes('netlify.app')
+      ? netlify({
+          edge: true
+        })
+      : host.includes('vercel.app')
+        ? vercel({
+            edge: true
+          })
+        : host.includes('pages.dev')
+          ? cloudflare()
+          : auto(),
     prerender: {
       crawl: false
     },
