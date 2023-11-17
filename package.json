@@ -1,7 +1,7 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
   "version": "0.0.0",
-  "description": "",
+  "description": "♟️ Unofficial Sentry Integration for SvelteKit with any edge runtime",
   "type": "module",
   "main": "dist/index.js",
   "license": "MIT",
@@ -13,7 +13,11 @@
     "!*.test.*",
     "!*.spec.*"
   ],
-  "keywords": [],
+  "keywords": [
+    "edge",
+    "sentry",
+    "sveltekit"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git"
