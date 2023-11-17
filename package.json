@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "♟️ Unofficial Sentry Integration for SvelteKit with any edge runtime",
   "type": "module",
   "main": "dist/index.js",
