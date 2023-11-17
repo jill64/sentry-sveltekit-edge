@@ -1,13 +1,23 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const { CI } = process.env
+
 export default defineConfig({
-  use: {
-    baseURL: process.env.PREVIEW_URL
-  },
+  use: CI
+    ? {
+        baseURL: process.env.PREVIEW_URL
+      }
+    : undefined,
+  webServer: CI
+    ? undefined
+    : {
+        command: 'pnpm run preview',
+        port: 4173
+      },
   testDir: 'tests',
   fullyParallel: true,
   workers: '100%',
-  retries: process.env.CI ? 2 : 0,
+  retries: CI ? 2 : 0,
   projects: [
     {
       name: 'chromium',
