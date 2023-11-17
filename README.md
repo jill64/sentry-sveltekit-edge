@@ -2,7 +2,7 @@
 
 # sentry-sveltekit-edge
 
-[![npm-version](https://img.shields.io/npm/v/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-license](https://img.shields.io/npm/l/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-download-month](https://img.shields.io/npm/dm/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-min-size](https://img.shields.io/bundlephobia/min/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge)
+[![npm-version](https://img.shields.io/npm/v/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-license](https://img.shields.io/npm/l/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-download-month](https://img.shields.io/npm/dm/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-min-size](https://img.shields.io/bundlephobia/min/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![ci.yml](https://github.com/jill64/sentry-sveltekit-edge/actions/workflows/ci.yml/badge.svg)](https://github.com/jill64/sentry-sveltekit-edge/actions/workflows/ci.yml)
 
 ♟️ Unofficial Sentry Integration for SvelteKit with any edge runtime
 
