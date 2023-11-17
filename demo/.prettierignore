@@ -1,0 +1,4 @@
+.netlify
+.svelte-kit
+.vercel
+build
