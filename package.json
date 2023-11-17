@@ -1,0 +1,63 @@
+{
+  "name": "@jill64/sentry-sveltekit-edge",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "jill64 <intents.turrets0h@icloud.com> (https://github.com/jill64)",
+  "bugs": "https://github.com/jill64/sentry-sveltekit-edge/issues",
+  "homepage": "https://github.com/jill64/sentry-sveltekit-edge#readme",
+  "files": [
+    "dist",
+    "!*.test.*",
+    "!*.spec.*"
+  ],
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jill64/sentry-sveltekit-edge.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "cd demo && pnpm dev",
+    "build": "pnpm build:lib && pnpm build:demo && npx publint",
+    "build:lib": "tsc && npx tsx scripts/build.ts",
+    "build:demo": "cd demo && pnpm build",
+    "preview": "pnpm build:lib && cd demo && pnpm preview",
+    "prepack": "pnpm build:lib",
+    "test": "playwright test",
+    "lint": "pnpm build:lib && pnpm lint:lib && pnpm lint:demo",
+    "lint:lib": "npx eslint .",
+    "lint:demo": "cd demo && pnpm lint",
+    "format": "pnpm format:lib && pnpm format:demo",
+    "format:lib": "npx prettier --write .",
+    "format:demo": "cd demo && pnpm format"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": "^1.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.39.0",
+    "@sentry/core": "7.80.1",
+    "@sentry/integrations": "7.80.1",
+    "@sentry/svelte": "7.80.1",
+    "@sentry/sveltekit": "7.80.1",
+    "@sentry/types": "7.80.1",
+    "@sentry/utils": "7.80.1",
+    "@sveltejs/kit": "1.27.6",
+    "@typescript-eslint/eslint-plugin": "6.11.0",
+    "@typescript-eslint/parser": "6.11.0",
+    "esbuild": "0.19.5",
+    "eslint-plugin-deprecation": "2.0.0",
+    "typescript": "5.2.2"
+  }
+}
