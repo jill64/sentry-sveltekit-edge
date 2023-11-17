@@ -1,4 +1,17 @@
 <!----- BEGIN GHOST DOCS HEADER ----->
+
+# sentry-sveltekit-edge
+
+[![npm-version](https://img.shields.io/npm/v/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-license](https://img.shields.io/npm/l/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-download-month](https://img.shields.io/npm/dm/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge) [![npm-min-size](https://img.shields.io/bundlephobia/min/@jill64/sentry-sveltekit-edge)](https://npmjs.com/package/@jill64/sentry-sveltekit-edge)
+
+♟️ Unofficial Sentry Integration for SvelteKit with any edge runtime
+
+## Installation
+
+```sh
+npm i @jill64/sentry-sveltekit-edge
+```
+
 <!----- END GHOST DOCS HEADER ----->
 
 > [!INFO]
