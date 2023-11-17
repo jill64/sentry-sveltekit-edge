@@ -1,1 +1,1 @@
-export { init } from './sdk'
+export { init } from './sdk.js'

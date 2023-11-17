@@ -1,1 +1,1 @@
-export * from '@sentry/sveltekit/types/common/utils'
+export * from '@sentry/sveltekit/types/common/utils.js'

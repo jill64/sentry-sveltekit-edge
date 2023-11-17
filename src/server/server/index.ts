@@ -1,3 +1,3 @@
-export { sentryHandle } from './handle'
-export { handleErrorWithSentry } from './handleError'
-export { init } from './sdk'
+export { sentryHandle } from './handle.js'
+export { handleErrorWithSentry } from './handleError.js'
+export { init } from './sdk.js'

@@ -3,7 +3,7 @@ import {
   getMainCarrier,
   initAndBind
 } from '@sentry/core'
-import type { NodeClientOptions } from '@sentry/node/types/types'
+import type { NodeClientOptions } from '@sentry/node/types/types.js'
 import type { NodeOptions } from '@sentry/sveltekit'
 import type { StackParser } from '@sentry/types'
 import {
@@ -12,8 +12,8 @@ import {
   stackParserFromStackParserOptions
 } from '@sentry/utils'
 
-import { NodeClient } from './client'
-import { makeNodeTransport } from './transports'
+import { NodeClient } from './client.js'
+import { makeNodeTransport } from './transports/index.js'
 
 export function init(options: NodeOptions = {}): void {
   const carrier = getMainCarrier()

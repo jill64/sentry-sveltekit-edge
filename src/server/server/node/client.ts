@@ -1,6 +1,6 @@
 import type { ServerRuntimeClientOptions } from '@sentry/core'
 import { SDK_VERSION, ServerRuntimeClient } from '@sentry/core'
-import type { NodeClientOptions } from '@sentry/node/types/types'
+import type { NodeClientOptions } from '@sentry/node/types/types.js'
 
 /**
  * The Sentry Node SDK Client.

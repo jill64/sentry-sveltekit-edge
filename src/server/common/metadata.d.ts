@@ -1,1 +1,1 @@
-export * from '@sentry/sveltekit/types/common/metadata'
+export * from '@sentry/sveltekit/types/common/metadata.js'

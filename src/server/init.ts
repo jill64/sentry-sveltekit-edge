@@ -3,7 +3,7 @@ import type { NodeOptions } from '@sentry/sveltekit'
 import type { SentryHandleOptions } from '@sentry/sveltekit/types/server/handle.js'
 import { Handle, HandleServerError } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
-import * as Sentry from './server'
+import * as Sentry from './server/index.js'
 
 export const init = (
   /**
