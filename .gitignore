@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+dist
+build
+.env
+.vercel
+.netlify
+.svelte-kit
+package-lock.json
