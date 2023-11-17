@@ -4,17 +4,17 @@ import vercel from '@sveltejs/adapter-vercel'
 import auto from '@sveltejs/adapter-auto'
 import { vitePreprocess } from '@sveltejs/kit/vite'
 
-const url = process.env.PREVIEW_URL
+const host = process.env.PREVIEW_HOST
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: url.includes('netlify.app') ? netlify({
+    adapter: host.includes('netlify.app') ? netlify({
       edge: true
-    }) : url.includes('vercel.app') ? vercel({
+    }) : host.includes('vercel.app') ? vercel({
       edge: true
-    }) : url.includes('pages.dev') ? cloudflare() : auto(),
+    }) : host.includes('pages.dev') ? cloudflare() : auto(),
     prerender: {
       crawl: false
     },

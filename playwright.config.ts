@@ -5,7 +5,7 @@ const { CI } = process.env
 export default defineConfig({
   use: CI
     ? {
-        baseURL: process.env.PREVIEW_URL
+        baseURL: `https://${process.env.PREVIEW_HOST}`
       }
     : undefined,
   webServer: CI
