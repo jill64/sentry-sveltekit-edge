@@ -4,5 +4,6 @@ dist
 build
 .env
 .vercel
+.netlify
 .svelte-kit
 package-lock.json
