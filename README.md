@@ -14,7 +14,7 @@ npm i @jill64/sentry-sveltekit-edge
 
 <!----- END GHOST DOCS HEADER ----->
 
-> [!INFO]
+> [!NOTE]
 > If running on `cloudflare pages`, use instead [`@jill64/sentry-sveltekit-cloudflare`](https://github.com/jill64/sentry-sveltekit-cloudflare).
 
 ## Confirmed Adapters
