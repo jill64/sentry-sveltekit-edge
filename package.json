@@ -50,7 +50,7 @@
     "@sveltejs/kit": "^1.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.40.0",
+    "@playwright/test": "1.40.1",
     "@sentry/core": "7.83.0",
     "@sentry/integrations": "7.83.0",
     "@sentry/sveltekit": "7.83.0",
