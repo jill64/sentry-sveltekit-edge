@@ -6,22 +6,22 @@
 
 ♟️ Unofficial Sentry integration for SvelteKit edge runtime
 
+<!----- END GHOST DOCS HEADER ----->
+
 ## Installation
 
 ```sh
 npm i @jill64/sentry-sveltekit-edge
 ```
 
-<!----- END GHOST DOCS HEADER ----->
-
 > [!NOTE]
-> If running on `cloudflare pages`, use instead [`@jill64/sentry-sveltekit-cloudflare`](https://github.com/jill64/sentry-sveltekit-cloudflare).
+> If running on `Cloudflare Pages`, use instead [`@jill64/sentry-sveltekit-cloudflare`](https://github.com/jill64/sentry-sveltekit-cloudflare).
 
 ## Confirmed Adapters
 
-- `adapter-vercel`
-- `adapter-netlify`
-- `adapter-cloudflare`
+- adapter-vercel
+- adapter-netlify
+- adapter-cloudflare
 
 ## Limitations
 
@@ -61,9 +61,11 @@ export default defineConfig({
 
 ```js
 // hooks.client.js
-import { clientInit } from '@jill64/sentry-sveltekit-edge'
+import { init } from '@jill64/sentry-sveltekit-edge/client'
+// or
+// import { clientInit } from '@jill64/sentry-sveltekit-edge'
 
-const onError = clientInit(
+const onError = init(
   '__YOUR_SENTRY_DSN__'
   // ,
   // {
@@ -83,7 +85,9 @@ export const handleError = onError((e) => {
 
 ```js
 // hooks.server.js
-import { serverInit } from '@jill64/sentry-sveltekit-edge'
+import { init } from '@jill64/sentry-sveltekit-edge/server'
+// or
+// import { serverInit } from '@jill64/sentry-sveltekit-edge'
 
 const { onHandle, onError } = serverInit(
   '__YOUR_SENTRY_DSN__'
