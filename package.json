@@ -9,9 +9,7 @@
   "bugs": "https://github.com/jill64/sentry-sveltekit-edge/issues",
   "homepage": "https://github.com/jill64/sentry-sveltekit-edge#readme",
   "files": [
-    "dist",
-    "!*.test.*",
-    "!*.spec.*"
+    "dist"
   ],
   "keywords": [
     "edge",
@@ -25,8 +23,19 @@
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git"
   },
   "exports": {
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "development": "./dist/client/index-dev.js",
+      "default": "./dist/client/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "development": "./dist/server/index-dev.js",
+      "default": "./dist/server/index.js"
+    },
     ".": {
       "types": "./dist/index.d.ts",
+      "development": "./dist/index-dev.js",
       "default": "./dist/index.js"
     }
   },
@@ -34,7 +43,7 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "cd demo && pnpm dev",
+    "dev": "pnpm build:lib && cd demo && pnpm dev",
     "build": "pnpm build:lib && pnpm build:demo && npx publint",
     "build:lib": "tsc && npx tsx scripts/build.ts",
     "build:demo": "cd demo && pnpm build",
@@ -60,11 +69,13 @@
     "@sentry/core": "7.86.0",
     "@sentry/integrations": "7.86.0",
     "@sentry/node": "7.86.0",
-    "@sentry/sveltekit": "7.86.0",
     "@sentry/types": "7.86.0",
     "@sentry/utils": "7.86.0",
     "@sveltejs/kit": "1.27.7",
     "esbuild": "0.19.8",
     "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@sentry/sveltekit": "7.86.0"
   }
 }
