@@ -1,10 +1,18 @@
-import { build } from 'esbuild'
+import esbuild from 'esbuild'
 
-await build({
-  entryPoints: ['src/index.ts'],
-  bundle: true,
-  outfile: 'dist/index.js',
-  minify: true,
-  format: 'esm',
-  external: ['$app/*']
-})
+const build = (path: string) =>
+  esbuild.build({
+    entryPoints: [`src/${path}.ts`],
+    outfile: `dist/${path}.js`,
+    bundle: true,
+    minify: true,
+    format: 'esm',
+    external: ['$app/*']
+  })
+
+build('index')
+build('index-dev')
+build('client/index')
+build('client/index-dev')
+build('server/index')
+build('server/index-dev')
