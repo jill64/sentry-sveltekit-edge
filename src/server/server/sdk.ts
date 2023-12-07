@@ -2,7 +2,7 @@ import { configureScope } from '@sentry/core'
 import { RewriteFrames } from '@sentry/integrations'
 import type { NodeOptions } from '@sentry/sveltekit'
 import { addOrUpdateIntegration } from '@sentry/utils'
-import { applySdkMetadata } from '../common/metadata.js'
+import { applySdkMetadata } from '../../common/metadata.js'
 import { init as initNodeSdk } from './node/index.js'
 import { rewriteFramesIteratee } from './utils.js'
 

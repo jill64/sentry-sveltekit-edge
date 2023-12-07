@@ -1,9 +1,8 @@
-import { dev } from '$app/environment'
-import type { NodeOptions } from '@sentry/sveltekit'
-import type { SentryHandleOptions } from '@sentry/sveltekit/types/server/handle.js'
-import { Handle, HandleServerError } from '@sveltejs/kit'
+import { Handle } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
 import * as Sentry from './server/index.js'
+import { HandleWrappers } from './types/HandleWrappers.js'
+import { InitOptions } from './types/InitOptions.js'
 
 export const init = (
   /**
@@ -14,30 +13,9 @@ export const init = (
   /**
    * Server Init Options
    */
-  options?: {
-    /**
-     * Sentry Options
-     */
-    sentryOptions?: NodeOptions
-    /**
-     * Sentry Handle Options
-     */
-    handleOptions?: SentryHandleOptions
-    /**
-     * Enable in dev mode
-     * @default false
-     */
-    enableInDevMode?: boolean
-  }
-) => {
-  const { enableInDevMode, sentryOptions, handleOptions } = options ?? {}
-
-  if (dev && !enableInDevMode) {
-    return {
-      onHandle: (handle?: Handle) => handle,
-      onError: (handleError?: HandleServerError) => handleError
-    }
-  }
+  options?: InitOptions
+): HandleWrappers => {
+  const { sentryOptions, handleOptions } = options ?? {}
 
   Sentry.init({
     dsn,

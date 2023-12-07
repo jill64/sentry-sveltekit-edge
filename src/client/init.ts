@@ -1,7 +1,8 @@
-import { dev } from '$app/environment'
 import { HandleClientError } from '@sveltejs/kit'
+import { Captured } from '../common/types/Captured.js'
 import * as Sentry from './sentry/index.js'
-import { handleErrorWithSentry } from './sentry/index.js'
+import { handleErrorWithSentry } from './sentry/handleError.js'
+import { InitOptions } from './types/InitOptions.js'
 
 export const init = (
   /**
@@ -12,33 +13,16 @@ export const init = (
   /**
    * Client Init Options
    */
-  options?: {
-    /**
-     * Sentry Browser Options
-     * @see https://docs.sentry.io/platforms/javascript/configuration/options/
-     */
-    sentryOptions?: Sentry.BrowserOptions
-    /**
-     * Enable in dev mode
-     * @default false
-     */
-    enableInDevMode?: boolean
-  }
-): ((handleError?: HandleClientError) => HandleClientError) => {
-  const { sentryOptions, enableInDevMode } = options ?? {}
-
-  if (dev && !enableInDevMode) {
-    return (handleError = () => {}) => handleError
-  }
-
+  options?: InitOptions
+): Captured<HandleClientError> => {
   Sentry.init({
     dsn,
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
     integrations: [new Sentry.Replay()],
-    ...sentryOptions
+    ...options?.sentryOptions
   })
 
-  return (handleError = () => {}) => handleErrorWithSentry(handleError)
+  return handleErrorWithSentry
 }
