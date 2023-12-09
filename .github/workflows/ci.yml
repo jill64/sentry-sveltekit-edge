@@ -6,7 +6,8 @@ jobs:
   e2e-test:
     strategy:
       matrix:
-        provider: [vercel, netlify, cloudflare]
-    uses: jill64/.github/.github/workflows/run-playwright.yml@main
+        provider: [vercel, netlify, cloudflare, 'local']
+    uses: jill64/playwright-config/.github/workflows/run-playwright.yml@main
     with:
-      test-command: export HOSTING_PROVIDER=${{ matrix.provider }} && npx playwright test
+      test-command: npx playwright test
+      hosting-provider: ${{ matrix.provider }}
