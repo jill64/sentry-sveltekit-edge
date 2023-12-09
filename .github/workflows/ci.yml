@@ -6,7 +6,7 @@ jobs:
   e2e-test:
     strategy:
       matrix:
-        provider: [vercel, netlify, cloudflare, local]
+        provider: [vercel, cloudflare, local]
     uses: jill64/playwright-config/.github/workflows/run-playwright.yml@732a5e76b8177046ae89a3a216ca21ec21b28897 # v2.1.0
     with:
       test-command: npx playwright test

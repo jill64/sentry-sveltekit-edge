@@ -14,14 +14,12 @@
 npm i @jill64/sentry-sveltekit-edge
 ```
 
+## Requirements
+
+- Any edge runtime that supports `fetch`
+
 > [!NOTE]
 > If running on `Cloudflare Pages`, use instead [`@jill64/sentry-sveltekit-cloudflare`](https://github.com/jill64/sentry-sveltekit-cloudflare).
-
-## Confirmed Adapters
-
-- adapter-vercel
-- adapter-netlify
-- adapter-cloudflare
 
 ## Limitations
 
