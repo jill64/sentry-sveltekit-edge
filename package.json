@@ -5,7 +5,12 @@
   "type": "module",
   "main": "dist/index.js",
   "license": "MIT",
-  "author": "jill64 <intents.turrets0h@icloud.com> (https://github.com/jill64)",
+  "author": {
+    "name": "jill64",
+    "email": "143883742+jill64@users.noreply.github.com",
+    "url": "https://github.com/jill64",
+    "image": "https://avatars.githubusercontent.com/u/143883742?v=4"
+  },
   "bugs": "https://github.com/jill64/sentry-sveltekit-edge/issues",
   "homepage": "https://github.com/jill64/sentry-sveltekit-edge#readme",
   "files": [
@@ -13,14 +18,14 @@
   ],
   "keywords": [
     "edge",
-    "netlify",
     "sentry",
     "sveltekit",
     "vercel"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jill64/sentry-sveltekit-edge.git"
+    "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
+    "image": "https://opengraph.githubassets.com/e0b44ceccecce5101ccc05ccccb34a1d22f58cc386c529abc577edff42a40023/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -71,7 +76,7 @@
     "@sentry/node": "7.86.0",
     "@sentry/types": "7.86.0",
     "@sentry/utils": "7.86.0",
-    "@sveltejs/kit": "1.27.7",
+    "@sveltejs/kit": "1.28.0",
     "esbuild": "0.19.9",
     "typescript": "5.3.3"
   },
