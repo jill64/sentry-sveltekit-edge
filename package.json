@@ -63,7 +63,7 @@
     "format:demo": "cd demo && pnpm format"
   },
   "peerDependencies": {
-    "@sveltejs/kit": "^2.0.0"
+    "@sveltejs/kit": ">=1.0.0"
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
