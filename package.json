@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "♟️ Unofficial Sentry integration for SvelteKit edge runtime",
   "type": "module",
   "main": "dist/index.js",
@@ -63,7 +63,7 @@
     "format:demo": "cd demo && pnpm format"
   },
   "peerDependencies": {
-    "@sveltejs/kit": "^1.0.0"
+    "@sveltejs/kit": "^2.0.0"
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
@@ -71,12 +71,12 @@
     "@jill64/playwright-config": "2.2.0",
     "@jill64/prettier-config": "1.0.0",
     "@playwright/test": "1.40.1",
+    "@sveltejs/kit": "2.0.0",
     "@sentry/core": "7.88.0",
     "@sentry/integrations": "7.88.0",
     "@sentry/node": "7.88.0",
     "@sentry/types": "7.88.0",
     "@sentry/utils": "7.88.0",
-    "@sveltejs/kit": "1.30.3",
     "esbuild": "0.19.9",
     "typescript": "5.3.3"
   },

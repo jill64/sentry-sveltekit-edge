@@ -2,7 +2,7 @@ import auto from '@sveltejs/adapter-auto'
 import cloudflare from '@sveltejs/adapter-cloudflare'
 import netlify from '@sveltejs/adapter-netlify'
 import vercel from '@sveltejs/adapter-vercel'
-import { vitePreprocess } from '@sveltejs/kit/vite'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 const { NETLIFY, CF_PAGES, VERCEL } = process.env
 
