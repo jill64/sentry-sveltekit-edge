@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         provider: [vercel, cloudflare, local]
-    uses: jill64/playwright-config/.github/workflows/run-playwright.yml@3493dea571274fa5ca79ec1597d7cfff848aa916 # v2.2.0
+    uses: jill64/playwright-config/.github/workflows/run-playwright.yml@f01d270e1cbfcae5dcae1e195eb6a49d187b3c64 # v2.2.1
     with:
       test-command: npx playwright test
       hosting-provider: ${{ matrix.provider }}
