@@ -1,15 +1,11 @@
-import { configureScope } from '@sentry/core'
+import { applySdkMetadata } from '@sentry-sveltekit/common/metadata.js'
+import { getCurrentScope } from '@sentry/core'
 import { RewriteFrames } from '@sentry/integrations'
-import type { NodeOptions } from '@sentry/sveltekit'
+import type { NodeOptions } from '@sentry/node/types/index.js'
 import { addOrUpdateIntegration } from '@sentry/utils'
-import { applySdkMetadata } from '../../common/metadata.js'
 import { init as initNodeSdk } from './node/index.js'
 import { rewriteFramesIteratee } from './utils.js'
 
-/**
- *
- * @param options
- */
 export function init(options: NodeOptions): void {
   applySdkMetadata(options, ['sveltekit', 'node'])
 
@@ -17,9 +13,7 @@ export function init(options: NodeOptions): void {
 
   initNodeSdk(options)
 
-  configureScope((scope) => {
-    scope.setTag('runtime', 'node')
-  })
+  getCurrentScope().setTag('runtime', 'node')
 }
 
 function addServerIntegrations(options: NodeOptions): void {

@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "♟️ Unofficial Sentry integration for SvelteKit edge runtime",
   "type": "module",
   "main": "dist/index.js",
@@ -49,8 +49,9 @@
   },
   "scripts": {
     "dev": "pnpm build:lib && cd demo && pnpm dev",
+    "sync": "npx tsx scripts/sync.ts",
     "build": "pnpm build:lib && pnpm build:demo && npx publint",
-    "build:lib": "tsc && npx tsx scripts/build.ts",
+    "build:lib": "pnpm sync && tsc && npx tsx scripts/build.ts",
     "build:demo": "cd demo && pnpm build",
     "preview": "pnpm build:lib && cd demo && pnpm preview",
     "prepack": "pnpm build:lib",
@@ -63,7 +64,7 @@
     "format:demo": "cd demo && pnpm format"
   },
   "peerDependencies": {
-    "@sveltejs/kit": ">=1.0.0"
+    "@sveltejs/kit": "1.x || 2.x"
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
@@ -71,16 +72,17 @@
     "@jill64/playwright-config": "2.2.1",
     "@jill64/prettier-config": "1.0.0",
     "@playwright/test": "1.40.1",
+    "@sentry/core": "7.89.0",
+    "@sentry/integrations": "7.89.0",
+    "@sentry/types": "7.89.0",
+    "@sentry/utils": "7.89.0",
     "@sveltejs/kit": "2.0.4",
-    "@sentry/core": "7.88.0",
-    "@sentry/integrations": "7.88.0",
-    "@sentry/node": "7.88.0",
-    "@sentry/types": "7.88.0",
-    "@sentry/utils": "7.88.0",
+    "@types/node": "20.10.5",
     "esbuild": "0.19.10",
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "@sentry/sveltekit": "7.88.0"
+    "@sentry/node": "7.89.0",
+    "@sentry/svelte": "7.89.0"
   }
 }

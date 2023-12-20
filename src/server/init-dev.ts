@@ -1,6 +1,6 @@
 import { init as initProd } from './init.js'
-import { HandleWrappers } from './types/HandleWrappers.js'
-import { InitOptions } from './types/InitOptions.js'
+import type { HandleWrappers } from './types/HandleWrappers.js'
+import type { InitOptions } from './types/InitOptions.js'
 import { defaultErrorHandler } from './util/defaultErrorHandler.js'
 import { defaultHandler } from './util/defaultHandler.js'
 

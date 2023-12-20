@@ -2,43 +2,26 @@ import type { Span } from '@sentry/core'
 import {
   captureException,
   getActiveTransaction,
-  getCurrentHub,
+  getCurrentScope,
   runWithAsyncContext,
   startSpan
 } from '@sentry/core'
 import {
-  addExceptionMechanism,
   dynamicSamplingContextToSentryBaggageHeader,
   objectify
 } from '@sentry/utils'
 import type { Handle, ResolveOptions } from '@sveltejs/kit'
-import { isHttpError, isRedirect } from '../../common/utils.js'
+
+import { isHttpError, isRedirect } from '@sentry-sveltekit/common/utils.js'
 import { getTracePropagationData } from './utils.js'
 
 export type SentryHandleOptions = {
-  /**
-   * Controls whether the SDK should capture errors and traces in requests that don't belong to a
-   * route defined in your SvelteKit application.
-   *
-   * By default, this option is set to `false` to reduce noise (e.g. bots sending random requests to your server).
-   *
-   * Set this option to `true` if you want to monitor requests events without a route. This might be useful in certain
-   * scenarios, for instance if you registered other handlers that handle these requests.
-   * If you set this option, you might want adjust the the transaction name in the `beforeSendTransaction`
-   * callback of your server-side `Sentry.init` options. You can also use `beforeSendTransaction` to filter out
-   * transactions that you still don't want to be sent to Sentry.
-   *
-   * @default false
-   */
   handleUnknownRoutes?: boolean
 }
 
 function sendErrorToSentry(e: unknown): unknown {
-  // In case we have a primitive, wrap it in the equivalent wrapper class (string -> String, etc.) so that we can
-  // store a seen flag on it.
   const objectifiedErr = objectify(e)
 
-  // similarly to the `load` function, we don't want to capture 4xx errors or redirects
   if (
     isRedirect(objectifiedErr) ||
     (isHttpError(objectifiedErr) &&
@@ -48,19 +31,14 @@ function sendErrorToSentry(e: unknown): unknown {
     return objectifiedErr
   }
 
-  captureException(objectifiedErr, (scope) => {
-    scope.addEventProcessor((event) => {
-      addExceptionMechanism(event, {
-        type: 'sveltekit',
-        handled: false,
-        data: {
-          function: 'handle'
-        }
-      })
-      return event
-    })
-
-    return scope
+  captureException(objectifiedErr, {
+    mechanism: {
+      type: 'sveltekit',
+      handled: false,
+      data: {
+        function: 'handle'
+      }
+    }
   })
 
   return objectifiedErr
@@ -95,21 +73,6 @@ export const transformPageChunk: NonNullable<
   return html
 }
 
-/**
- * A SvelteKit handle function that wraps the request for Sentry error and
- * performance monitoring.
- *
- * Usage:
- * ```
- * // src/hooks.server.ts
- * import { sentryHandle } from '@sentry/sveltekit';
- *
- * export const handle = sentryHandle();
- *
- * // Optionally use the sequence function to add additional handlers.
- * // export const handle = sequence(sentryHandle(), yourCustomHandler);
- * ```
- */
 export function sentryHandle(handlerOptions?: SentryHandleOptions): Handle {
   const options = {
     handleUnknownRoutes: false,
@@ -117,10 +80,7 @@ export function sentryHandle(handlerOptions?: SentryHandleOptions): Handle {
   }
 
   const sentryRequestHandler: Handle = (input) => {
-    // if there is an active transaction, we know that this handle call is nested and hence
-    // we don't create a new domain for it. If we created one, nested server calls would
-    // create new transactions instead of adding a child span to the currently active span.
-    if (getCurrentHub().getScope().getSpan()) {
+    if (getCurrentScope().getSpan()) {
       return instrumentHandle(input, options)
     }
     return runWithAsyncContext(() => {
@@ -134,14 +94,15 @@ export function sentryHandle(handlerOptions?: SentryHandleOptions): Handle {
 async function instrumentHandle(
   { event, resolve }: Parameters<Handle>[0],
   options: SentryHandleOptions
-): Promise<Awaited<ReturnType<Handle>>> {
+): Promise<Response> {
   if (!event.route?.id && !options.handleUnknownRoutes) {
     return resolve(event)
   }
 
   const { dynamicSamplingContext, traceparentData, propagationContext } =
     getTracePropagationData(event)
-  getCurrentHub().getScope().setPropagationContext(propagationContext)
+
+  getCurrentScope().setPropagationContext(propagationContext)
 
   try {
     const resolveResult = await startSpan(

@@ -1,4 +1,4 @@
-import type { captureException } from '@sentry/sveltekit'
+import type { captureException } from '@sentry/svelte'
 import { HandleClientError, HandleServerError } from '@sveltejs/kit'
 
 export type Captured<
