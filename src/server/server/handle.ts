@@ -101,7 +101,7 @@ async function instrumentHandle(
 
   const { dynamicSamplingContext, traceparentData, propagationContext } =
     getTracePropagationData(event)
-  
+
   getCurrentScope().setPropagationContext(propagationContext)
 
   try {
