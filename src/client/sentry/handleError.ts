@@ -1,7 +1,7 @@
+import { captureException } from '@sentry-sveltekit/index.client.js'
 import { consoleSandbox } from '@sentry/utils'
-import { HandleClientError } from '@sveltejs/kit'
-import { Captured } from '../../common/types/Captured.js'
-import { captureException } from './index.js'
+import type { HandleClientError } from '@sveltejs/kit'
+import type { Captured } from '../../types/Captured.js'
 
 const defaultErrorHandler: HandleClientError = ({ error }) => {
   consoleSandbox(() => {
@@ -12,12 +12,15 @@ const defaultErrorHandler: HandleClientError = ({ error }) => {
 export const handleErrorWithSentry: Captured<HandleClientError> =
   (handleError = defaultErrorHandler) =>
   (input) => {
-    const result = captureException(input.error, {
-      mechanism: {
-        type: 'sveltekit',
-        handled: false
-      }
-    })
+    const result =
+      input?.status !== 404
+        ? captureException(input.error, {
+            mechanism: {
+              type: 'sveltekit',
+              handled: false
+            }
+          })
+        : undefined
 
     return handleError(input, result)
   }

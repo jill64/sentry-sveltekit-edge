@@ -1,8 +1,8 @@
-import { HandleClientError } from '@sveltejs/kit'
-import { Captured } from '../common/types/Captured.js'
-import * as Sentry from './sentry/index.js'
+import type { HandleClientError } from '@sveltejs/kit'
+import type { Captured } from '../types/Captured.js'
 import { handleErrorWithSentry } from './sentry/handleError.js'
-import { InitOptions } from './types/InitOptions.js'
+import * as Sentry from '@sentry-sveltekit/index.client.js'
+import type { InitOptions } from './types/InitOptions.js'
 
 export const init = (
   /**
