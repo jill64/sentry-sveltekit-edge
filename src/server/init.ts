@@ -1,8 +1,8 @@
 import { Handle } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
 import * as Sentry from './server/index.js'
-import { HandleWrappers } from './types/HandleWrappers.js'
-import { InitOptions } from './types/InitOptions.js'
+import type { HandleWrappers } from './types/HandleWrappers.js'
+import type { InitOptions } from './types/InitOptions.js'
 
 export const init = (
   /**

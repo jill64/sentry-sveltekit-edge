@@ -1,7 +1,7 @@
 import { captureException } from '@sentry/core'
 import { addExceptionMechanism } from '@sentry/utils'
 import type { HandleServerError } from '@sveltejs/kit'
-import { Captured } from '../../common/types/Captured.js'
+import type { Captured } from '../../types/Captured.js'
 import { defaultErrorHandler } from '../util/defaultErrorHandler.js'
 import { isNotFoundError } from '../util/isNotFoundError.js'
 

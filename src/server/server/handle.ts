@@ -12,7 +12,7 @@ import {
   objectify
 } from '@sentry/utils'
 import type { Handle, ResolveOptions } from '@sveltejs/kit'
-import { isHttpError, isRedirect } from '../../common/utils.js'
+import { isHttpError, isRedirect } from '@sentry-sveltekit/common/utils.js'
 import { getTracePropagationData } from './utils.js'
 
 export type SentryHandleOptions = {

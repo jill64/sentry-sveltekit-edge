@@ -1,13 +1,13 @@
-import type { GlobalWithSentryValues } from '@sentry/sveltekit/types/vite/injectGlobalValues.js'
-import type { StackFrame } from '@sentry/types'
+import { StackFrame } from '@sentry/types'
 import {
+  GLOBAL_OBJ,
   basename,
   escapeStringForRegex,
-  GLOBAL_OBJ,
   join,
   tracingContextFromHeaders
 } from '@sentry/utils'
-import type { RequestEvent } from '@sveltejs/kit'
+import { RequestEvent } from '@sveltejs/kit'
+import { GlobalWithSentryValues } from '@sentry-sveltekit/vite/injectGlobalValues.js'
 import { WRAPPED_MODULE_SUFFIX } from '../vite/autoInstrument.js'
 
 /**

@@ -1,6 +1,6 @@
-import type { DevOptions } from '../../common/types/DevOptions.js'
+import type { NodeOptions } from '@sentry-sveltekit/index.server.js'
+import type { DevOptions } from '../../types/DevOptions.js'
 import type { SentryHandleOptions } from './SentryHandleOptions.js'
-import type { NodeOptions } from '@sentry/sveltekit'
 
 export type InitOptions = DevOptions & {
   /**
