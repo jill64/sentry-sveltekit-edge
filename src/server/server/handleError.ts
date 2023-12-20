@@ -1,5 +1,4 @@
 import { captureException } from '@sentry/core'
-import { addExceptionMechanism } from '@sentry/utils'
 import type { HandleServerError } from '@sveltejs/kit'
 import type { Captured } from '../../types/Captured.js'
 import { defaultErrorHandler } from '../util/defaultErrorHandler.js'
@@ -12,15 +11,11 @@ export const handleErrorWithSentry: Captured<HandleServerError> =
       return handleError(input)
     }
 
-    const result = captureException(input.error, (scope) => {
-      scope.addEventProcessor((event) => {
-        addExceptionMechanism(event, {
-          type: 'sveltekit',
-          handled: false
-        })
-        return event
-      })
-      return scope
+    const result = captureException(input.error, {
+      mechanism: {
+        type: 'sveltekit',
+        handled: false
+      }
     })
 
     return handleError(input, result)

@@ -1,4 +1,5 @@
-import { StackFrame } from '@sentry/types'
+import type { GlobalWithSentryValues } from '@sentry-sveltekit/vite/injectGlobalValues.js'
+import type { StackFrame } from '@sentry/types'
 import {
   GLOBAL_OBJ,
   basename,
@@ -6,16 +7,9 @@ import {
   join,
   tracingContextFromHeaders
 } from '@sentry/utils'
-import { RequestEvent } from '@sveltejs/kit'
-import { GlobalWithSentryValues } from '@sentry-sveltekit/vite/injectGlobalValues.js'
+import type { RequestEvent } from '@sveltejs/kit'
 import { WRAPPED_MODULE_SUFFIX } from '../vite/autoInstrument.js'
 
-/**
- * Takes a request event and extracts traceparent and DSC data
- * from the `sentry-trace` and `baggage` DSC headers.
- *
- * Sets propagation context as a side effect.
- */
 export function getTracePropagationData(
   event: RequestEvent
 ): ReturnType<typeof tracingContextFromHeaders> {
@@ -24,17 +18,6 @@ export function getTracePropagationData(
   return tracingContextFromHeaders(sentryTraceHeader, baggageHeader)
 }
 
-/**
- * A custom iteratee function for the `RewriteFrames` integration.
- *
- * Does the same as the default iteratee, but also removes the `module` property from the
- * frame to improve issue grouping.
- *
- * For some reason, our stack trace processing pipeline isn't able to resolve the bundled
- * module name to the original file name correctly, leading to individual error groups for
- * each module. Removing the `module` field makes the grouping algorithm fall back to the
- * `filename` field, which is correctly resolved and hence grouping works as expected.
- */
 export function rewriteFramesIteratee(frame: StackFrame): StackFrame {
   if (!frame.filename) {
     return frame
@@ -70,8 +53,6 @@ export function rewriteFramesIteratee(frame: StackFrame): StackFrame {
 
   delete frame.module
 
-  // In dev-mode, the WRAPPED_MODULE_SUFFIX is still present in the frame's file name.
-  // We need to remove it to make sure that the frame's filename matches the actual file
   if (frame.filename.endsWith(WRAPPED_MODULE_SUFFIX)) {
     frame.filename = frame.filename.slice(0, -WRAPPED_MODULE_SUFFIX.length)
   }

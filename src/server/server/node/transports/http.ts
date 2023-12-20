@@ -1,5 +1,5 @@
 import { createTransport } from '@sentry/core'
-import type { NodeTransportOptions } from '@sentry/node/types/transports'
+import type { NodeTransportOptions } from '@sentry/node/types/transports/index.js'
 import type {
   Transport,
   TransportMakeRequestResponse,
