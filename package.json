@@ -72,17 +72,17 @@
     "@jill64/playwright-config": "2.2.1",
     "@jill64/prettier-config": "1.0.0",
     "@playwright/test": "1.40.1",
-    "@sentry/core": "7.89.0",
-    "@sentry/integrations": "7.89.0",
-    "@sentry/types": "7.89.0",
-    "@sentry/utils": "7.89.0",
+    "@sentry/core": "7.90.0",
+    "@sentry/integrations": "7.90.0",
+    "@sentry/types": "7.90.0",
+    "@sentry/utils": "7.90.0",
     "@sveltejs/kit": "2.0.4",
     "@types/node": "20.10.5",
     "esbuild": "0.19.10",
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "@sentry/node": "7.89.0",
-    "@sentry/svelte": "7.89.0"
+    "@sentry/node": "7.90.0",
+    "@sentry/svelte": "7.90.0"
   }
 }
