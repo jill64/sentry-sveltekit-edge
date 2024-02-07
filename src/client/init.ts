@@ -1,7 +1,7 @@
+import * as Sentry from '@sentry-sveltekit/index.client.js'
 import type { HandleClientError } from '@sveltejs/kit'
 import type { Captured } from '../types/Captured.js'
 import { handleErrorWithSentry } from './sentry/handleError.js'
-import * as Sentry from '@sentry-sveltekit/index.client.js'
 import type { InitOptions } from './types/InitOptions.js'
 
 export const init = (
@@ -20,7 +20,7 @@ export const init = (
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
-    integrations: [new Sentry.Replay()],
+    integrations: [Sentry.replayIntegration()],
     ...options?.sentryOptions
   })
 
