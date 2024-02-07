@@ -1,5 +1,5 @@
 import type { ServerRuntimeClientOptions } from '@sentry/core'
-import { SDK_VERSION, ServerRuntimeClient } from '@sentry/core'
+import { ServerRuntimeClient, applySdkMetadata } from '@sentry/core'
 import type { NodeClientOptions } from '@sentry/node/types/types.js'
 
 /**
@@ -14,18 +14,9 @@ export class NodeClient extends ServerRuntimeClient<NodeClientOptions> {
    * @param options Configuration options for this SDK.
    */
   public constructor(options: NodeClientOptions) {
-    options._metadata = options._metadata || {}
-    options._metadata.sdk = options._metadata.sdk || {
-      name: 'sentry.javascript.node',
-      packages: [
-        {
-          name: 'npm:@sentry/node',
-          version: SDK_VERSION
-        }
-      ],
-      version: SDK_VERSION
-    }
+    applySdkMetadata(options, 'node')
 
+    // Until node supports global TextEncoder in all versions we support, we are forced to pass it from util
     options.transportOptions = {
       ...options.transportOptions
     }
@@ -33,7 +24,8 @@ export class NodeClient extends ServerRuntimeClient<NodeClientOptions> {
     const clientOptions: ServerRuntimeClientOptions = {
       ...options,
       platform: 'node',
-      serverName: options.serverName
+      runtime: { name: 'node', version: global.process.version },
+      serverName: options.serverName || global.process.env.SENTRY_NAME
     }
 
     super(clientOptions)

@@ -3,8 +3,10 @@ import {
   getMainCarrier,
   initAndBind
 } from '@sentry/core'
-import type { NodeClientOptions } from '@sentry/node/types/types.js'
-import type { NodeOptions } from '@sentry/node/types/index.js'
+import type {
+  NodeClientOptions,
+  NodeOptions
+} from '@sentry/node/types/types.js'
 import type { StackParser } from '@sentry/types'
 import {
   createStackParser,
