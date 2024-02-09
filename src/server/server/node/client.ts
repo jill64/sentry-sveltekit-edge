@@ -23,9 +23,9 @@ export class NodeClient extends ServerRuntimeClient<NodeClientOptions> {
 
     const clientOptions: ServerRuntimeClientOptions = {
       ...options,
-      platform: 'node',
-      runtime: { name: 'node', version: global.process.version },
-      serverName: options.serverName || global.process.env.SENTRY_NAME
+      platform: 'edge',
+      runtime: { name: 'edge' },
+      serverName: options.serverName
     }
 
     super(clientOptions)
