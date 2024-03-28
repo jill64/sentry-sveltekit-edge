@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "♟️ Unofficial Sentry integration for SvelteKit edge runtime",
   "type": "module",
   "main": "dist/index.js",
@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "@sentry/node": "7.108.0",
-    "@sentry/svelte": "7.108.0"
+    "@sentry/svelte": "7.108.0",
+    "wrangler": "3.39.0"
   }
 }
