@@ -84,6 +84,6 @@
   "dependencies": {
     "@sentry/node": "7.112.2",
     "@sentry/svelte": "7.112.2",
-    "wrangler": "3.52.0"
+    "wrangler": "3.53.0"
   }
 }
