@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/6eff3b049073ace42756203c6f972eed9fd4e8feb5df5cff212da508819e02fb/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/a19522c4eb6504dc258104a17c52b1f1ae52216991fee9a8418136555799370b/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -72,18 +72,18 @@
     "@jill64/playwright-config": "2.3.0",
     "@jill64/prettier-config": "1.0.0",
     "@playwright/test": "1.43.1",
-    "@sentry/core": "7.114.0",
+    "@sentry/core": "7.116.0",
     "@sentry/integrations": "7.114.0",
-    "@sentry/types": "7.114.0",
-    "@sentry/utils": "7.114.0",
+    "@sentry/types": "7.116.0",
+    "@sentry/utils": "7.116.0",
     "@sveltejs/kit": "2.5.10",
     "@types/node": "20.12.12",
     "esbuild": "0.21.3",
     "typescript": "5.4.5"
   },
   "dependencies": {
-    "@sentry/node": "7.114.0",
-    "@sentry/svelte": "7.114.0",
+    "@sentry/node": "7.116.0",
+    "@sentry/svelte": "7.116.0",
     "wrangler": "3.57.1"
   }
 }
