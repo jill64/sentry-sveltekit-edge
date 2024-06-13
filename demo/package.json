@@ -12,7 +12,7 @@
   "devDependencies": {
     "@jill64/eslint-config-svelte": "1.2.33",
     "@sentry/vite-plugin": "2.18.0",
-    "@sveltejs/adapter-cloudflare": "4.4.0",
+    "@sveltejs/adapter-cloudflare": "4.4.1",
     "@sveltejs/adapter-vercel": "5.3.1",
     "@sveltejs/adapter-netlify": "4.2.0",
     "@sveltejs/adapter-auto": "3.2.1",
