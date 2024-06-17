@@ -10,7 +10,7 @@
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
-    "@jill64/eslint-config-svelte": "1.2.34",
+    "@jill64/eslint-config-svelte": "1.2.35",
     "@sentry/vite-plugin": "2.18.0",
     "@sveltejs/adapter-cloudflare": "4.4.1",
     "@sveltejs/adapter-vercel": "5.3.1",
