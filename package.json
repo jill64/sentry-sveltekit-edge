@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/2ef4ccabd9aba9853157969b58d932fcdf7819031061887d32288ddd58b1ece9/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/92faeda35fc66c78d387b4f94ba57f3a099f6e73fc22cdeaf7b31da1cf683d12/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
