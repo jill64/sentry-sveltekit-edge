@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/783823056f448810715fa7bc1fa59582d5f0de219444786831a7a1cf5557ab3c/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/d2c236a4d90d008b333c0ce4d4d885c48de081466b58e3c52d4cf4f14854efbc/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -79,7 +79,7 @@
     "@sveltejs/kit": "2.5.18",
     "@types/node": "20.14.11",
     "esbuild": "0.23.0",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "dependencies": {
     "@sentry/node": "7.114.0",
