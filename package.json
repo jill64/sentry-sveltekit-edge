@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/ffefe05b6e25dac6c8bbf9280a9e8762516d1f74220d4ce7efbb929573152b7a/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/8521e57b46df7edc23cc682507e5e04319029fcbb1aa32556d49496b101a2ea2/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -69,7 +69,7 @@
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
     "@jill64/eslint-config-ts": "1.1.33",
-    "@jill64/playwright-config": "2.4.0",
+    "@jill64/playwright-config": "2.4.1",
     "@jill64/prettier-config": "1.0.0",
     "@playwright/test": "1.43.1",
     "@sentry/core": "7.114.0",
