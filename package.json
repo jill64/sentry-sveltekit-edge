@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "description": "♟️ Unofficial Sentry integration for SvelteKit edge runtime",
   "type": "module",
   "main": "dist/index.js",
@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/8a9d3f77ce105c4dc9afbefcd86614fe62768fdb895a793198a8beeaf05a596e/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/2dce3a259d3d28599b0f4075e9dd60385c90977ab345b9db8ad8656b7a1f343c/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -84,6 +84,6 @@
   "dependencies": {
     "@sentry/node": "7.114.0",
     "@sentry/svelte": "7.114.0",
-    "wrangler": "3.67.1"
+    "wrangler": "3.68.0"
   }
 }
