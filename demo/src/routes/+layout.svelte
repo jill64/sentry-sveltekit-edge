@@ -1,14 +1,15 @@
 <script lang="ts">
-  export let data
+  import { Toaster } from '@jill64/svelte-toast'
 
-  $: ({ title } = data)
+  let { data, children } = $props()
 </script>
 
+<Toaster />
 <svelte:head>
-  <title>{title}</title>
+  <title>{data.title}</title>
 </svelte:head>
-<h1>{title}</h1>
-<slot />
+<h1>{data.title}</h1>
+{@render children()}
 
 <style>
   :global(body) {

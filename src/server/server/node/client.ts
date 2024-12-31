@@ -1,6 +1,6 @@
 import type { ServerRuntimeClientOptions } from '@sentry/core'
 import { ServerRuntimeClient, applySdkMetadata } from '@sentry/core'
-import type { NodeClientOptions } from '@sentry/node/types/types.js'
+import type { NodeClientOptions } from '../../../sentry-javascript/packages/node/src/types.js'
 
 /**
  * The Sentry Node SDK Client.

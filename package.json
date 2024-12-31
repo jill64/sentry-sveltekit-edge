@@ -1,6 +1,6 @@
 {
   "name": "@jill64/sentry-sveltekit-edge",
-  "version": "1.2.55",
+  "version": "2.0.0",
   "description": "♟️ Unofficial Sentry integration for SvelteKit edge runtime",
   "type": "module",
   "main": "dist/index.js",
@@ -24,8 +24,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/ba011a9ff20bd8753beb32321b7c4b451e63cdaefc176d8c98b9cff06b4a119f/jill64/sentry-sveltekit-edge"
+    "url": "git+https://github.com/jill64/sentry-sveltekit-edge.git",
+    "image": "https://opengraph.githubassets.com/fbc988127a1e2e6cab2ec0b630a90428eb4e464b4304ebfbacd57c4b8d86d5f3/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -64,26 +64,31 @@
     "format:demo": "cd demo && pnpm format"
   },
   "peerDependencies": {
-    "@sveltejs/kit": "1.x || 2.x"
+    "@sveltejs/kit": "2.x"
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
-    "@jill64/eslint-config-ts": "1.1.37",
+    "@jill64/eslint-config-ts": "2.0.1",
     "@jill64/playwright-config": "2.4.1",
     "@jill64/prettier-config": "1.0.0",
-    "@playwright/test": "1.43.1",
-    "@sentry/core": "7.114.0",
+    "@playwright/test": "1.49.1",
+    "@sentry/core": "8.47.0",
     "@sentry/integrations": "7.114.0",
-    "@sentry/types": "7.114.0",
-    "@sentry/utils": "7.114.0",
-    "@sveltejs/kit": "2.5.21",
-    "@types/node": "20.16.3",
-    "esbuild": "0.23.1",
-    "typescript": "5.5.4"
+    "@sentry/types": "8.47.0",
+    "@sentry/utils": "8.47.0",
+    "@sveltejs/kit": "2.15.1",
+    "@types/node": "22.10.2",
+    "esbuild": "0.24.2",
+    "typescript": "5.7.2"
   },
   "dependencies": {
-    "@sentry/node": "7.114.0",
-    "@sentry/svelte": "7.114.0",
-    "wrangler": "3.73.0"
+    "@sentry/node": "8.47.0",
+    "@sentry/svelte": "8.47.0",
+    "@sentry/opentelemetry": "8.47.0",
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/resources": "1.30.0",
+    "@opentelemetry/sdk-trace-base": "1.30.0",
+    "@opentelemetry/instrumentation": "0.57.0",
+    "wrangler": "3.00.0"
   }
 }
