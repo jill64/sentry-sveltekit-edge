@@ -1,26 +1,35 @@
 <script lang="ts">
-  export let data
-
-  $: ({ loadAt, routes } = data)
+  import { toast } from '@jill64/svelte-toast'
+  let { data } = $props()
 </script>
 
-<p>Load at {loadAt} from Server</p>
+<p>Load at {data.loadAt} from Server</p>
 <ul>
-  {#each routes as href}
+  {#each data.routes as href}
     <li>
       <a {href}>{href}</a>
     </li>
   {/each}
 </ul>
 <button
-  on:click={() => {
+  onclick={() => {
+    toast.error('Error from client')
     throw new Error('Error from client')
   }}
 >
   Throw Error
 </button>
 {#each ['POST', 'PUT', 'PATCH', 'DELETE'] as method}
-  <button on:click={() => fetch('/', { method })}>
+  <button
+    onclick={async () => {
+      const res = await fetch('/', { method })
+      if (res.ok) {
+        toast.success(await res.text())
+      } else {
+        toast.error(await res.text())
+      }
+    }}
+  >
     {method}
   </button>
 {/each}
