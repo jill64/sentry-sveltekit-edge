@@ -7,5 +7,4 @@ build
 .netlify
 .svelte-kit
 package-lock.json
-pnpm-lock.yaml
 /src/sentry-javascript
