@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jill64/sentry-sveltekit-edge.git",
-    "image": "https://opengraph.githubassets.com/8296c7b7521efc9e628fce60f18d04f770cb2c8f39b71216951212f51c52fd19/jill64/sentry-sveltekit-edge"
+    "image": "https://opengraph.githubassets.com/c9fe5d6098be5d0cfb4daed3fc2f90e2efccec5a544019ecc5b35d96391e002b/jill64/sentry-sveltekit-edge"
   },
   "exports": {
     "./client": {
@@ -89,6 +89,6 @@
     "@opentelemetry/resources": "1.30.0",
     "@opentelemetry/sdk-trace-base": "1.30.0",
     "@opentelemetry/instrumentation": "0.57.0",
-    "wrangler": "3.00.0"
+    "wrangler": "3.19.0"
   }
 }
