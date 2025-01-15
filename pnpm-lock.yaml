@@ -82,8 +82,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       '@sveltejs/adapter-auto':
-        specifier: 3.3.1
-        version: 3.3.1(@sveltejs/kit@2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))
+        specifier: 4.0.0
+        version: 4.0.0(@sveltejs/kit@2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))
       '@sveltejs/adapter-cloudflare':
         specifier: 5.0.1
         version: 5.0.1(@sveltejs/kit@2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(wrangler@3.99.0(@cloudflare/workers-types@4.20241224.0))
@@ -1123,8 +1123,8 @@ packages:
     resolution: {integrity: sha512-E2elyHjP3Wqnk2uXr9C17jHRQBKX8jEOpzOnEOiXYDI2FBfehs9ttj9yX1I7H8ofCiqO2EsTu5r2a0C26ZWi+w==}
     engines: {node: '>= 14'}
 
-  '@sveltejs/adapter-auto@3.3.1':
-    resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+  '@sveltejs/adapter-auto@4.0.0':
+    resolution: {integrity: sha512-kmuYSQdD2AwThymQF0haQhM8rE5rhutQXG4LNbnbShwhMO4qQGnKaaTy+88DuNSuoQDi58+thpq8XpHc1+oEKQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -3550,7 +3550,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))':
+  '@sveltejs/adapter-auto@4.0.0(@sveltejs/kit@2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))':
     dependencies:
       '@sveltejs/kit': 2.15.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6)))(svelte@5.17.0)(vite@6.0.7(@types/node@22.10.6))
       import-meta-resolve: 4.1.0
