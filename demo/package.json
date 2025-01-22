@@ -14,7 +14,7 @@
     "@sentry/vite-plugin": "3.0.0",
     "@sveltejs/adapter-cloudflare": "5.0.1",
     "@sveltejs/adapter-vercel": "5.5.3",
-    "@sveltejs/adapter-netlify": "4.4.0",
+    "@sveltejs/adapter-netlify": "4.4.1",
     "@sveltejs/adapter-auto": "4.0.0",
     "@jill64/svelte-toast": "2.1.6",
     "svelte": "5.17.0",
